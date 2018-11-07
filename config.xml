@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 
 
-<widget id="com.phonegap.leafletOhneRoute"
+<widget id="com.phonegap.leafletOhneAngular"
 
 version="1.0.0" 
 xmlns="http://www.w3.org/ns/widgets" 
@@ -11,10 +11,10 @@ versionCode = "1"
 xmlns:gap="http://phonegap.com/ns/1.0">
   
 
-<name>Leaflet ohne Route</name>
+<name>Leaflet ohne Angular</name>
     
 
-<description>Leaflet ohne Route</description>
+<description>Leaflet ohne Angular</description>
   
 
 <author  email="veter_peremen_i@mail.ru" href="http://phonegap.com">
