@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Ziel</title>
+	
+<!--<link rel="stylesheet" href="leaflet/leaflet.css" /> 
+<link rel="stylesheet" href="leaflet-routing-machine-3.2.7/dist/leaflet-routing-machine.css" /> 
+<script src="leaflet/leaflet.js"></script> 
+<<script src="leaflet-routing-machine-3.2.7/dist/leaflet-routing-machine.js"></script>
+<script type="text/javascript" src="cordova.js"></script>-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<style>
+#map {
+            
+            width: 100%;
+            height: 90%;
+        }
+</style> 
+  </head>
+  <body>
+    <div id="map" ></div>
+	<button onclick="route();">Route</button>	
+<script>
+  function onLoad() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        alert("navigator.geolocation works well");
+    }
+        }
+	var laengeStandort;
+    var breiteStandort;
+    var laengeZiel;
+    var breiteZiel;
+	
+
+var map = L.map('map').fitWorld();
+   map.locate({setView: true, maxZoom: 16});
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+var geocoder = L.Control.geocoder()
+.on('markgeocode', function(event) {
+
+    var center = event.geocode.center;
+    L.marker(center).addTo(map);
+    map.setView(center, map.getZoom());
+	
+	var laenge = center.lat;
+   laengeZiel = laenge.toFixed(6);
+   var breite = center.lng;
+   breiteZiel = breite.toFixed(6);
+	
+})
+.addTo(map);
+
+
+
+function onLocationFound(e) {
+  
+    L.marker(e.latlng).addTo(map)
+        .bindPopup("You are hier").openPopup();
+		
+   var laenge = e.latlng.lat;
+   laengeStandort = laenge.toFixed(6);
+   var breite = e.latlng.lng;
+   breiteStandort = breite.toFixed(6);
+
+}
+
+map.on('locationfound', onLocationFound);
+
+function onLocationError(e) {
+    alert(e.message);
+}
+
+map.on('locationerror', onLocationError);
+
+function route(){
+L.Routing.control({
+    waypoints: [
+       
+		//L.latLng(52.215934, 13.211726),
+		L.latLng(laengeStandort, breiteStandort),
+		
+        //L.latLng(52.525084, 13.369402)
+		L.latLng(laengeZiel, breiteZiel)
+    ],
+    routeWhileDragging: true,
+	geocoder: L.Control.Geocoder.nominatim()
+	
+}).addTo(map); 
+}
+
+
+
+
+
+
+</script>
+ 
+
+
+  </body>
+</html>
