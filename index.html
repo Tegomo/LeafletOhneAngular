@@ -10,32 +10,27 @@
   </head>
   <body>
   <div>
-			
-			
-			<!--<button onclick="standort();">Standort</button>	</br>
-	  <button onclick="ziel();">Ziel</button> </br>-->
-	<button onclick="route();">Calculer ma trajectoire</button></br>
-<textarea cols="40" rows="40">
-Beim "Standort" wird den Standort angezeigt.
-Beim "Ziel" kann man Ziel eingeben und Route antippen. Dann wird Route von Standort bis zum Ziel angezeigt.
-Beim "Route von bis" kann man Anfangsort und Zielort eingeben und die Route angezeigt bekommen.
-</textarea>
-	</div>	
-	 <script type="text/javascript">
-   document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    // Now safe to use the PhoneGap API
-}
-	function standort(){
-	window.location.href='standort.html';
-	}
-	function ziel(){
-	window.location.href='ziel.html';
-	}
-	function route(){
-	window.location.href='routing.html';
-	}
-  </script>
+      <button onclick="standort();">Ma localisation</button></br>
+	  <button onclick="ziel();">Destination</button> </br>
+      <button onclick="route();">Calculer ma trajectoire</button></br>
+        <textarea cols="40" rows="40">
 
+        </textarea>
+  </div>
+  <script type="text/javascript">
+      document.addEventListener("deviceready", onDeviceReady, false);
+      function onDeviceReady() {
+            // Now safe to use the PhoneGap API
+      }
+      function standort(){
+          window.location.href='standort.html';
+      }
+      function ziel(){
+          window.location.href='ziel.html';
+      }
+      function route(){
+          window.location.href='routing.html';
+      }
+  </script>
   </body>
 </html>

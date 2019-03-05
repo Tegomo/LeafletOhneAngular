@@ -3,36 +3,32 @@
 
 <widget id="com.phonegap.leafletOhneAngular"
 
-version="1.0.0" 
-xmlns="http://www.w3.org/ns/widgets" 
+        version="1.0.0"
+        xmlns="http://www.w3.org/ns/widgets"
 
-versionCode = "1"
+        versionCode = "1"
 
-xmlns:gap="http://phonegap.com/ns/1.0">
-  
+        xmlns:gap="http://phonegap.com/ns/1.0">
 
-<name>Leaflet ohne Angular</name>
-    
 
-<description>Leaflet ohne Angular</description>
-  
+    <name>Leaflet ohne Angular</name>
 
-<author  email="veter_peremen_i@mail.ru" href="http://phonegap.com">
-        Polina Wilke    </author>
- 
- <preference name="DisallowOverscroll" value="true" />
+
+    <description>Leaflet ohne Angular</description>
+
+
+    <author  email="veter_peremen_i@mail.ru" href="http://phonegap.com">
+        Polina Wilke   </author>
+
+    <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
 
-	<content src="index.html" />
-	<access origin="*" />
-	<allow-intent href="http://*/*" />
-<allow-intent href="https://*/*" />
-<allow-intent href="geo:*" />
-<plugin name="cordova-plugin-geolocation" spec="2.1.0"  />
-<plugin name="cordova-plugin-whitelist" spec="1.1.0" />
-
-
-
-
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="geo:*" />
+    <plugin name="cordova-plugin-geolocation" spec="2.1.0"  />
+    <plugin name="cordova-plugin-whitelist" spec="1.1.0" />
 
 </widget>
